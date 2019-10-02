@@ -6,5 +6,4 @@ routes.get('/', (req, res) => {
   res.json({ message: 'Hello Alfredo' });
 })
 
-
 module.exports = routes;
