@@ -9,6 +9,14 @@ const SpotSchemma = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
+}, {
+  toJSON: {
+    virtuals: true
+  }
 });
+
+SpotSchemma.virtual('thumbmail_url').get(function () {
+  return `http://localhost:3000/files/${this.thumbnail}`
+})
 
 module.exports = model('Spot', SpotSchemma);
